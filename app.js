@@ -98,7 +98,7 @@ function navHtml(){
   return`<div class="stage-nav">
     <button class="stage-nav__btn stage-nav__btn--prev" onclick="prevStage()" ${stageIndex===0?"disabled":""}>← Back</button>
     <button class="stage-nav__btn ${isLast?"stage-nav__btn--quiz":"stage-nav__btn--next"}" onclick="nextStage()">
-      ${isLast?(isFri?"Start Quiz 🐦":"Lesson Complete ✓"):"Next →"}
+      ${isLast?(isFri?"Start Quiz 🐦":"Lesson Complete ✓"):"Next ->"}
     </button>
   </div>`;
 }
@@ -144,7 +144,7 @@ function questionCardHtml(){
       <div class="q-card__q">${q.q}</div>
       <div class="q-card__options" id="optContainer">${q.opts.map((o,i)=>`<button class="q-opt" id="opt${i}" onclick="pickAnswer(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join("")}</div>
       <div class="q-card__feedback" id="qFeedback"></div>
-      <div class="q-card__next" id="qNext"><button class="btn btn--plan" onclick="nextQuestion()">${currentQ+1<ALL_TERMS[activeTerm][activeWeek].quiz.length?"Next Question →":"See Results 🏆"}</button></div>
+      <div class="q-card__next" id="qNext"><button class="btn btn--plan" onclick="nextQuestion()">${currentQ+1<ALL_TERMS[activeTerm][activeWeek].quiz.length?"Next Question ->":"See Results 🏆"}</button></div>
     </div>
   </div>`;
 }
